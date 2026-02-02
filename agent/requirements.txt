@@ -1,0 +1,15 @@
+# Clawdbot Sales Agent Requirements
+# Note: This agent uses wacli CLI for WhatsApp integration
+# Install wacli separately: https://wacli.sh
+
+# Core dependencies (for future API integration)
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Development
+pytest>=7.4.0
+black>=23.0.0
+
+# Optional: For webhook server
+# flask>=3.0.0
+# gunicorn>=21.0.0

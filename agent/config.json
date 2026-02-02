@@ -1,0 +1,49 @@
+{
+  "business": {
+    "name": "Clawdbot Setup",
+    "description": "AI assistant setup service for Saudi businesses",
+    "whatsapp": "966507407827",
+    "telegram": "miuatoro",
+    "website": "https://clawdbot-setup-landing.vercel.app",
+    "pricing": {
+      "setup": 250,
+      "monthly": 25,
+      "currency": "SAR",
+      "currency_symbol": "ريال"
+    }
+  },
+  "service": {
+    "delivery_time": "24 hours",
+    "features": [
+      "WhatsApp/Telegram auto-reply",
+      "Calendar scheduling",
+      "Email management",
+      "Web search & research",
+      "Task reminders",
+      "24/7 availability"
+    ],
+    "guarantee": {
+      "enabled": true,
+      "days": 7,
+      "type": "money_back"
+    }
+  },
+  "security": {
+    "max_message_length": 2000,
+    "allow_auto_reply": false,
+    "require_approval": true,
+    "injection_detection": true
+  },
+  "first_customer": {
+    "name": "Omar",
+    "phone": "966507574700",
+    "chat_id": "158355528130800@lid",
+    "free_setup": true,
+    "notes": "Friend of Mohammed, testing the service"
+  },
+  "prompts": {
+    "greeting": "السلام عليكم! أنا Hero من خدمة تركيب Clawdbot. كيف أقدر أساعدك؟",
+    "injection_response": "😄 طريف! بس أنا مساعد مبيعات فقط، ما أقدر أتجاوز تعليماتي. كيف أقدر أساعدك في خدمتنا؟",
+    "closing": "ممتاز! بمجرد ما أجمع المعلومات، نبدأ التركيب فوراً!"
+  }
+}
