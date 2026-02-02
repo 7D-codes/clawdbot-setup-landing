@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعدك الذكي 24/7 | Clawdbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'IBM Plex Sans Arabic', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .hero h1 {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+        
+        .features {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-left: 15px;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .feature-item strong {
+            font-weight: 600;
+        }
+        
+        .pricing {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        .pricing h2 {
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 3rem;
+            color: #667eea;
+            font-weight: 700;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .cta-button {
+            display: block;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 20px 0 10px;
+            transition: transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact-options {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        .contact-options h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .contact-btn:hover {
+            transform: scale(1.02);
+        }
+        
+        .whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        
+        .telegram {
+            background: #0088cc;
+            color: white;
+        }
+        
+        .guarantee {
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .price {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>🤖 احصل على مساعدك الذكي الخاص</h1>
+            <p>نُصب لك Clawdbot - الذكاء الاصطناعي الذي يعمل لك 24/7 بدون ما تحتاج تفهم برمجة</p>
+            <div class="badge">✅ جاهز خلال 24 ساعة</div>
+        </div>
+        
+        <!-- Features -->
+        <div class="features">
+            <h2>🎯 وش يسوي لك؟</h2>
+            <div class="feature-item">
+                <span class="feature-icon">💬</span>
+                <div>
+                    <strong>يرد على عملائك</strong>
+                    <p style="color:#666;font-size:0.9rem">رد آلي على واتساب وإنستقرام وتلقرام</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📅</span>
+                <div>
+                    <strong>ينظم مواعيدك</strong>
+                    <p style="color:#666;font-size:0.9rem">يتذكر المواعيد ويرسل تذكيرات</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📧</span>
+                <div>
+                    <strong>يدير إيميلاتك</strong>
+                    <p style="color:#666;font-size:0.9rem">يقرى ويرد على الإيميلات المهمة</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔍</span>
+                <div>
+                    <strong>يبحث لك</strong>
+                    <p style="color:#666;font-size:0.9rem">يبحث في الإنترنت ويجمع معلومات</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pricing -->
+        <div class="pricing">
+            <h2>💰 الاستثمار</h2>
+            <div class="price">250 <span>ريال</span></div>
+            <p style="color:#666;margin:10px 0">رسوم التركيب مرة واحدة</p>
+            <p style="color:#888;font-size:0.9rem">+ تكلفة السيرفر 25 ريال/شهر</p>
+            
+            <a href="https://wa.me/966507407827" class="cta-button">
+                📱 تواصل واتساب الآن
+            </a>
+        </div>
+        
+        <!-- Contact -->
+        <div class="contact-options">
+            <h2>📞 طرق التواصل</h2>
+            <p style="color:#666;margin-bottom:20px">اختر الطريقة اللي تناسبك</p>
+            
+            <a href="https://wa.me/966507407827" class="contact-btn whatsapp">
+                💬 واتساب
+            </a>
+            <a href="https://t.me/miuatoro" class="contact-btn telegram">
+                ✈️ تلقرام
+            </a>
+        </div>
+        
+        <div class="guarantee">
+            <p>🔒 ضمان استعادة المال خلال 7 أيام إذا ما اشتغل معك</p>
+            <p style="margin-top:10px">© 2025 جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+</body>
+</html>
