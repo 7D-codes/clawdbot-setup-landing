@@ -1,29 +1,55 @@
 {
   "name": "Clawdbot Setup Service",
-  "description": "AI assistant setup service for Saudi businesses",
+  "description": "AI assistant setup service for non-technical Saudi businesses",
   "status": "active",
   "started": "2026-02-02",
   "category": "business",
+  "architecture": "container-based-multi-tenant",
   "revenue_model": {
-    "setup_fee": 250,
-    "monthly_server_margin": 6,
+    "tiers": {
+      "basic": {"price": 49, "margin_percent": 92},
+      "business": {"price": 99, "margin_percent": 96, "anchor": true},
+      "pro": {"price": 199, "margin_percent": 98}
+    },
+    "cost_per_customer": 4,
     "currency": "SAR"
+  },
+  "payment": {
+    "phase_1": {"method": "manual", "provider": "STC Pay / Bank transfer", "customers": "1-10"},
+    "phase_2": {"method": "gateway", "provider": "Paymob or Tap", "customers": "10+"},
+    "phase_3": {"method": "international", "provider": "Polar + Stripe", "customers": "scale"}
   },
   "metrics": {
     "customers_total": 1,
     "customers_active": 0,
     "revenue_setup": 0,
-    "revenue_monthly": 0
+    "revenue_monthly": 0,
+    "break_even_customers": 3
   },
   "first_customer": {
     "name": "Omar",
+    "phone": "+966507574700",
+    "email": "oamkadi@gmail.com",
+    "platform": "telegram",
+    "need": "task_reminders",
+    "pricing": 79,
     "status": "deal_closed_pending_setup",
     "acquired_date": "2026-02-02"
+  },
+  "legal_status": {
+    "commercial_registration": "pending",
+    "sdaia_registration": "pending",
+    "pdpl_compliant": "drafted"
   },
   "links": {
     "website": "https://clawdbot-setup-landing.vercel.app",
     "github": "https://github.com/7D-codes/clawdbot-setup-landing",
     "whatsapp": "https://wa.me/966507407827",
     "telegram": "https://t.me/miuatoro"
+  },
+  "documentation": {
+    "product_team": "/product-team/",
+    "business_team": "/business-team/",
+    "daily_logs": "/Users/mac/clawd/memory/2026-02-02.md"
   }
 }
