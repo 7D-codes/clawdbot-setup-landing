@@ -1,0 +1,29 @@
+{
+  "name": "Clawdbot Setup Service",
+  "description": "AI assistant setup service for Saudi businesses",
+  "status": "active",
+  "started": "2026-02-02",
+  "category": "business",
+  "revenue_model": {
+    "setup_fee": 250,
+    "monthly_server_margin": 6,
+    "currency": "SAR"
+  },
+  "metrics": {
+    "customers_total": 1,
+    "customers_active": 0,
+    "revenue_setup": 0,
+    "revenue_monthly": 0
+  },
+  "first_customer": {
+    "name": "Omar",
+    "status": "deal_closed_pending_setup",
+    "acquired_date": "2026-02-02"
+  },
+  "links": {
+    "website": "https://clawdbot-setup-landing.vercel.app",
+    "github": "https://github.com/7D-codes/clawdbot-setup-landing",
+    "whatsapp": "https://wa.me/966507407827",
+    "telegram": "https://t.me/miuatoro"
+  }
+}
