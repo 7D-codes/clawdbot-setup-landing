@@ -1,0 +1,31 @@
+# ClawDeploy Caddy Configuration
+# This file is auto-updated by the assignment API
+
+# Global options
+{
+    auto_https off
+    admin off
+}
+
+# Default catch-all (return 404)
+:80 {
+    respond "Not Found" 404
+}
+
+# Wildcard subdomain handling
+*.clawdeploy.com {
+    tls {
+        # Use Let's Encrypt with DNS challenge (Cloudflare)
+        dns cloudflare {env.CF_API_TOKEN}
+    }
+    
+    # Default response if no subdomain match
+    respond "ClawDeploy - Instance not found" 404
+}
+
+# User subdomains will be added below this line by the assignment API
+# FORMAT:
+# @username host username.clawdeploy.com
+# handle @username {
+#     reverse_proxy container_ip:8080
+# }

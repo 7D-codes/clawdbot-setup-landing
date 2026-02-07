@@ -1,0 +1,76 @@
+#cloud-config
+package_update: true
+
+packages:
+  - docker.io
+  - docker-compose
+  - jq
+  - curl
+  - git
+  - sqlite3
+  - postgresql-client
+  - redis-tools
+
+runcmd:
+  # Add user to docker group
+  - usermod -aG docker root
+  
+  # Create directories
+  - mkdir -p /opt/clawdeploy/{idle,assigned,logs,config}
+  - mkdir -p /opt/caddy
+  - mkdir -p /etc/clawdeploy
+  
+  # Install Caddy
+  - apt install -y debian-keyring debian-archive-keyring apt-transport-https
+  - curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+  - curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | tee /etc/apt/sources.list.d/caddy-stable.list
+  - apt update
+  - apt install -y caddy
+  
+  # Enable Docker
+  - systemctl enable docker
+  - systemctl start docker
+  
+  # Create network for containers
+  - docker network create clawdeploy-net || true
+  
+  # Pre-pull OpenClaw image (placeholder - we'll build this)
+  - docker pull ubuntu:22.04
+  
+  # Install Node.js for API server
+  - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+  - apt install -y nodejs
+  
+  # Install PM2 for process management
+  - npm install -g pm2
+  
+  # Set permissions
+  - chown -R root:root /opt/clawdeploy
+  - chmod 755 /opt/clawdeploy
+  
+  # Create systemd service for pool manager
+  - |
+    cat > /etc/systemd/system/clawdeploy-pool.service << 'EOF'
+    [Unit]
+    Description=ClawDeploy Pool Manager
+    After=docker.service
+    Requires=docker.service
+    
+    [Service]
+    Type=simple
+    WorkingDirectory=/opt/clawdeploy
+    ExecStart=/usr/bin/node /opt/clawdeploy/pool-manager.js
+    Restart=always
+    RestartSec=10
+    
+    [Install]
+    WantedBy=multi-user.target
+    EOF
+  
+  - systemctl daemon-reload
+  - systemctl enable clawdeploy-pool
+  
+  # Create marker file
+  - echo "$(date -Iseconds) - Setup complete" > /opt/clawdeploy/setup.log
+
+final_message: "ClawDeploy node setup complete. Ready for pool initialization."

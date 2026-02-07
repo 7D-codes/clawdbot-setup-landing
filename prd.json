@@ -1,0 +1,176 @@
+{
+  "version": "1.0.0",
+  "project": "ClawDeploy SaaS",
+  "updated": "2026-02-06T12:20:00+03:00",
+  "stories": [
+    {
+      "id": "CDS-001",
+      "title": "Landing Page with Waitlist",
+      "description": "Create landing page explaining the 3-layer value prop and collect waitlist emails",
+      "acceptance": [
+        "Hero section: 'OpenClaw that just works'",
+        "3 layers visualized (Infrastructure, Enhanced Core, Ecosystem)",
+        "Feature comparison vs SimpleClaw",
+        "Pricing section (Free/Pro/Team)",
+        "Waitlist email form",
+        "Mobile responsive"
+      ],
+      "status": "todo",
+      "priority": "high",
+      "estimated_hours": 8,
+      "deliverable": "landing/"
+    },
+    {
+      "id": "CDS-002",
+      "title": "VPS Pool Infrastructure POC",
+      "description": "Proof of concept: Pre-warmed VPS pool with Docker that assigns instances on signup",
+      "acceptance": [
+        "Script to provision VPS on Hetzner",
+        "Docker with OpenClaw pre-installed",
+        "Assignment API: POST /assign → returns VPS IP/credentials",
+        "Reclamation: Release VPS when user deletes account",
+        "Basic monitoring (health check endpoint)"
+      ],
+      "status": "todo",
+      "priority": "high",
+      "estimated_hours": 16,
+      "deliverable": "infra/"
+    },
+    {
+      "id": "CDS-003",
+      "title": "Auth System",
+      "description": "User signup, login, password reset with JWT tokens",
+      "acceptance": [
+        "Signup with email + password",
+        "Email verification",
+        "Login with JWT",
+        "Password reset flow",
+        "Subdomain reservation (check availability)"
+      ],
+      "status": "todo",
+      "priority": "high",
+      "estimated_hours": 8,
+      "deliverable": "backend/auth/"
+    },
+    {
+      "id": "CDS-004",
+      "title": "Dashboard V1",
+      "description": "User dashboard to manage their OpenClaw instance",
+      "acceptance": [
+        "Instance status (running/stopped)",
+        "Usage metrics (messages, tokens)",
+        "Settings: custom domain, SOUL preset",
+        "Skills panel (view installed)",
+        "Billing section (upgrade/downgrade)"
+      ],
+      "status": "todo",
+      "priority": "high",
+      "estimated_hours": 16,
+      "deliverable": "frontend/dashboard/"
+    },
+    {
+      "id": "CDS-005",
+      "title": "Stripe Integration",
+      "description": "Billing system with Stripe for Pro/Team subscriptions",
+      "acceptance": [
+        "Stripe Checkout for upgrades",
+        "Webhook handling (payment success, failure, cancel)",
+        "Customer portal (manage subscription)",
+        "Free tier enforcement (hard limit at 100 msgs)"
+      ],
+      "status": "todo",
+      "priority": "high",
+      "estimated_hours": 8,
+      "deliverable": "backend/billing/"
+    },
+    {
+      "id": "CDS-006",
+      "title": "SOUL Presets System",
+      "description": "5 curated SOUL personas users can choose from",
+      "acceptance": [
+        "5 presets: Engineer, CEO, Creative, Researcher, General",
+        "UI to switch between presets",
+        "Custom SOUL upload (markdown editor)",
+        "Preview mode (test persona before saving)"
+      ],
+      "status": "todo",
+      "priority": "medium",
+      "estimated_hours": 8,
+      "deliverable": "backend/soul/"
+    },
+    {
+      "id": "CDS-007",
+      "title": "ClawHub V1 (Curated Skills)",
+      "description": "Skill browser with 20 curated skills, one-click install",
+      "acceptance": [
+        "Skill catalog page (20 skills)",
+        "Skill detail page (description, config, permissions)",
+        "Install button → adds to user's instance",
+        "Installed skills panel in dashboard",
+        "Categories: Productivity, Dev, Communication, Research"
+      ],
+      "status": "todo",
+      "priority": "medium",
+      "estimated_hours": 12,
+      "deliverable": "frontend/clawhub/"
+    },
+    {
+      "id": "CDS-008",
+      "title": "Basic Agent Spawning",
+      "description": "Users can spawn up to 3 sub-agents with specific tasks",
+      "acceptance": [
+        "'New Agent' button in dashboard",
+        "Set agent name + task description",
+        "Agent runs in background",
+        "View agent status (running/completed/failed)",
+        "View agent output",
+        "Limit: 3 concurrent agents (Pro tier)"
+      ],
+      "status": "todo",
+      "priority": "medium",
+      "estimated_hours": 12,
+      "deliverable": "backend/agents/"
+    },
+    {
+      "id": "CDS-009",
+      "title": "Core Skills Bundle",
+      "description": "Build 10 essential skills for launch",
+      "acceptance": [
+        "Web search (Brave API)",
+        "Gmail (read/send)",
+        "Google Calendar",
+        "Notion (pages, databases)",
+        "Slack (messages)",
+        "GitHub (repos, issues, PRs)",
+        "File system (read/write)",
+        "Weather",
+        "Calculator",
+        "Timer/Reminders"
+      ],
+      "status": "todo",
+      "priority": "medium",
+      "estimated_hours": 20,
+      "deliverable": "skills/"
+    },
+    {
+      "id": "CDS-010",
+      "title": "OpenClaw Fork Setup",
+      "description": "Fork OpenClaw with enhanced features for ClawDeploy",
+      "acceptance": [
+        "Fork repo on GitHub",
+        "Pluggable SOUL system (load from external source)",
+        "Skill registry API (install/list/remove)",
+        "Agent spawning API",
+        "Enhanced memory backend interface",
+        "Auto-update mechanism (pull upstream weekly)"
+      ],
+      "status": "todo",
+      "priority": "high",
+      "estimated_hours": 24,
+      "deliverable": "openclaw-fork/"
+    }
+  ],
+  "completed": [],
+  "in_progress": [],
+  "todo": ["CDS-001", "CDS-002", "CDS-003", "CDS-004", "CDS-005", "CDS-006", "CDS-007", "CDS-008", "CDS-009", "CDS-010"]
+}

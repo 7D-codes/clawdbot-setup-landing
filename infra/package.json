@@ -1,0 +1,18 @@
+{
+  "name": "clawdeploy-api",
+  "version": "1.0.0",
+  "description": "ClawDeploy Assignment API and Pool Manager",
+  "main": "api/assignment-api.js",
+  "scripts": {
+    "start": "node api/assignment-api.js",
+    "pool": "node scripts/pool-manager.js",
+    "dev": "nodemon api/assignment-api.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
