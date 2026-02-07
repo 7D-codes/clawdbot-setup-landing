@@ -1,0 +1,74 @@
+# ClawDeploy SaaS — Progress Log
+
+## 2026-02-06 — Workshop Complete
+
+**Pivot Decision:** Service → SaaS
+**Scope:** Global market, 3-layer platform
+
+**Workshop Outputs:**
+- ✅ New PRD written (PRD.md)
+- ✅ prd.json created (10 stories)
+- ✅ 3-layer architecture defined
+
+**Key Decisions:**
+1. Fork OpenClaw (not just host vanilla)
+2. ClawHub skill marketplace
+3. Pricing: Free/$29/$79
+4. VPS pool for MVP (K8s later)
+
+## 2026-02-07 — Infrastructure Build Started
+
+**DIY Infrastructure Code:**
+- ✅ Terraform for Hetzner VPS provisioning
+- ✅ Cloud-init for node setup (Docker, Caddy, Node.js)
+- ✅ Assignment API (Express.js) - handles user signup → instance assignment
+- ✅ Pool Manager (background worker) - maintains idle instance pool
+- ✅ Caddy config for wildcard subdomain SSL
+- ✅ Deploy script (one-command deployment)
+
+**Files Created:**
+```
+infra/
+├── terraform/
+│   ├── main.tf              # VPS provisioning
+│   └── cloud-init.yaml      # Node setup
+├── api/
+│   └── assignment-api.js    # User → instance assignment
+├── scripts/
+│   ├── pool-manager.js      # Idle pool maintenance
+│   └── deploy.sh            # One-click deploy
+├── caddy/
+│   └── Caddyfile            # Wildcard SSL routing
+└── package.json
+```
+
+**How it works:**
+1. Terraform creates VPS nodes on Hetzner
+2. Cloud-init installs Docker, Caddy, Node.js
+3. Pool Manager keeps 5 idle OpenClaw containers ready
+4. User signs up → Assignment API picks idle container → injects config → assigns subdomain
+5. Caddy routes `user.clawdeploy.com` → container IP
+
+**Still needed:**
+- OpenClaw Docker image (our fork with skill API)
+- Frontend dashboard
+- Stripe billing integration
+- ClawHub skill registry
+
+## 2026-02-07 — Complete PRD Written
+
+**File:** `PRD-COMPLETE.md` (22KB, 9 sections)
+
+**Covers:**
+- Executive Summary (business model, success metrics)
+- User Personas & Flows (3 personas, full journeys)
+- Feature Specs (infrastructure, auth, skills, billing)
+- Technical Architecture (diagrams, DB schema, APIs)
+- Security (encryption, compliance)
+- Testing Plan (unit, integration, load, E2E)
+- Deployment Plan (3 phases, 12 weeks)
+- Open Questions (decision matrix)
+
+**Ready for technical team handoff.**
+
+**Next:** Build MVP (Phase 1: Free tier, 5 skills, 2 nodes)
